@@ -1,0 +1,28 @@
+server:
+  port: 9999
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost/mediappbd3
+    username: postgres
+    password: 123
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+    client:
+      client-id: mitomediapp
+      client-secret: mito89codex
+      authorized-grant-types: password
+      scope: read,write     
